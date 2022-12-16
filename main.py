@@ -1,8 +1,13 @@
 #configs
-#
 #How many players are there?
 #
+from map import map
 
+def main():
+    map1 = map([])
+    map.makemap(map1)
+    map.return_map(map1)
+    
 #while (dectectives still have moves or mr.x is found)
 #
 #   facilitate mr. x's move(s)
@@ -14,5 +19,5 @@
 #
 #
 #
-#
-#
+if __name__ == "__main__":
+    main()
