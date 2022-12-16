@@ -4,7 +4,7 @@ class node:
         self.taxi = taxi.split(",")
         self.bus = bus.split(",")
         self.metro = metro.split(",")
-        self.occupied = false
+        self.occupied = False
 
     # def __str__(self):
     #     print(str(self.number))

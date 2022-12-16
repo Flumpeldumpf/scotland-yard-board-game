@@ -3,6 +3,7 @@
 #
 from map import map
 from detective import detective
+from setup import setup
 
 taxi = 2
 bus = 3
@@ -13,11 +14,16 @@ def main():
     map.makemap(map1)
     #map.return_map(map1)
 
-    red = detective("red", map1.node_list[0], [10, 8, 4])
-    map1.node_list[0].occupied = true;
-    yellow = detective("yellow", map1.node_list[1], [10, 8, 4])
-    green = detective("green", map1.node_list[2], [10, 8, 4])
-    blue = detective("blue", map1.node_list[3], [10, 8, 4])
+    st = setup()
+    posList = st.generate_start_positions() 
+    red = detective("red", map1.node_list[posList[0]], [10, 8, 4])
+    map1.node_list[posList[0]].occupied = True
+    yellow = detective("yellow", map1.node_list[posList[1]], [10, 8, 4])
+    map1.node_list[posList[1]].occupied = True
+    green = detective("green", map1.node_list[posList[2]], [10, 8, 4])
+    map1.node_list[posList[2]].occupied = True
+    blue = detective("blue", map1.node_list[posList[3]], [10, 8, 4])
+    map1.node_list[posList[3]].occupied = True
 
     print(red.move(map1.node_list[8], taxi))
 
