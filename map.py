@@ -5,7 +5,7 @@ class map:
         self.node_list = node_list
 
     def makemap(self):
-        f = open("connections.txt", "r")
+        f = open("scotland_yard.txt", "r")
         
         line = f.readline()
         while line:
@@ -21,3 +21,4 @@ class map:
     def return_map(self):
         for i in range(len(self.node_list)):
             print(self.node_list[i].returnsmth())
+            
