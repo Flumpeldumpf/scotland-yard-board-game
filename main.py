@@ -3,6 +3,8 @@
 #
 from map import map
 from detective import detective
+
+
 def main():
     map1 = map([])
     map.makemap(map1)
