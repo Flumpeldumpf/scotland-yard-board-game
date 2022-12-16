@@ -21,4 +21,5 @@ class map:
     def return_map(self):
         for i in range(len(self.node_list)):
             print(self.node_list[i].returnsmth())
-            
+
+    
