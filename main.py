@@ -29,8 +29,5 @@ def main():
 #       make player 1's move
 #       make player 2's move etc.
 #
-#
-#
-#
 if __name__ == "__main__":
     main()
