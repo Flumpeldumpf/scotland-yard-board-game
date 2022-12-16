@@ -17,14 +17,14 @@ def main():
     st = setup()
     posList = st.generate_start_positions() 
     red = detective("red", map1.node_list[posList[0]], [10, 8, 4])
-    map1.node_list[posList[0]].occupied = True
+    map1.node_list[posList[0]].occupied = 1
     yellow = detective("yellow", map1.node_list[posList[1]], [10, 8, 4])
-    map1.node_list[posList[1]].occupied = True
+    map1.node_list[posList[1]].occupied = 1
     green = detective("green", map1.node_list[posList[2]], [10, 8, 4])
-    map1.node_list[posList[2]].occupied = True
+    map1.node_list[posList[2]].occupied = 1
     blue = detective("blue", map1.node_list[posList[3]], [10, 8, 4])
-    map1.node_list[posList[3]].occupied = True
-    
+    map1.node_list[posList[3]].occupied = 1
+
     
     print("red is at", red.pos.number, "where do you want to move?")
     moveTo = int(input())
