@@ -16,3 +16,4 @@ class setup:
             if sp not in sps:
                 sps.append(sp)
                 x += 1
+        return sps
