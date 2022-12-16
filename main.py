@@ -13,13 +13,14 @@ def main():
     map.makemap(map1)
     #map.return_map(map1)
 
-    resources = [8, 6, 4]
-    red = detective("red", map1.node_list[0], resources)
-    yellow = detective("yellow", map1.node_list[1], resources)
-    green = detective("green", map1.node_list[2], resources)
-    blue = detective("blue", map1.node_list[3], resources)
-    print(map1.node_list[9])
-    print(red.move(map1.node_list[9], taxi))
+    red = detective("red", map1.node_list[0], [10, 8, 4])
+    yellow = detective("yellow", map1.node_list[1], [10, 8, 4])
+    green = detective("green", map1.node_list[2], [10, 8, 4])
+    blue = detective("blue", map1.node_list[3], [10, 8, 4])
+    print(red.resources)
+    print(red.move(map1.node_list[8], taxi))
+    print(red.resources)
+    print(yellow.resources)
     
 #while (dectectives still have moves or mr.x is found)
 #
