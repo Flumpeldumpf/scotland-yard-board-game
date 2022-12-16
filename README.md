@@ -34,7 +34,7 @@ The other players all play the role of detective. Lay the tickets next to the ga
 
 ### Each Detective Receives:
 - 1 colored playing piece of his choice and the corresponding ticket board
-- Tickets that he lays on his ticket board: 4 x underground tickets, 8 x bus tickets, 11 x taxi tickets
+- Tickets that he lays on his ticket board: 4 x underground tickets, 8 x bus tickets, 10 x taxi tickets
 
 ## Initial Starting Position
 
