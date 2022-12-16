@@ -5,17 +5,19 @@ class node:
         self.bus = bus.split(",")
         self.metro = metro.split(",")
 
+    def __str__(self):
+        print(self.number)
     # def __str__(self):
     #     print(str(self.number))
     def returnsmth(self):
         return self.number
     def check_connectivity(self, node):
-        retval = 0;
+        retval = 1;
         if self.taxi.count(node) > 0:
-            retval += 100
+            retval *= 2
         if self.bus.count(node) > 0:
-            retval += 10
+            retval *= 3
         if self.metro.count(node) > 0:
-            retval += 1
+            retval *= 5
         return retval
 
