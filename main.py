@@ -24,8 +24,10 @@ def main():
     map1.node_list[posList[2]].occupied = True
     blue = detective("blue", map1.node_list[posList[3]], [10, 8, 4])
     map1.node_list[posList[3]].occupied = True
-
-    print(red.move(map1.node_list[8], taxi))
+    
+    print("red is at", red.pos.number, "where do you want to move?")
+    moveTo = int(input())
+    print(red.move(map1.node_list[moveTo-1], taxi))
 
 #while (dectectives still have moves or mr.x is found)
 #
