@@ -1,5 +1,3 @@
-
-
 class detective:
     def __init__(self, color, pos, resources):
         self.color = color
