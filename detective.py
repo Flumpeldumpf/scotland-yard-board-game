@@ -3,7 +3,9 @@ class detective:
         self.color = color
         self.pos = pos
         self.resources = resources
-    def move(self, pos, rosources, )
-
-
-    
+    def move(self, pos, transport):
+        if self.resources[transport] > 0:
+            self.resources[transport]--;
+        else
+            return("You are out of tokens for this type of transport.")
+        #check isConnected here
