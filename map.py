@@ -66,7 +66,6 @@ class map:
                     
 
                     if j == node2:
-                        print(j)
                         path = [node2]
                         crawl = node2;
                         path.append(crawl);
