@@ -22,7 +22,6 @@ class map:
             list[3] = list[3].split("\n")[0]
             n = node(list[0], list[1], list[2], list[3])
             self.node_list.append(n)
-
             for i in list[1].split(","):
                 if (i != 0):
                     self.taxis.add_edge(int(list[0]), int(i))
