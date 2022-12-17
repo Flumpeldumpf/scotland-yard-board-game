@@ -1,5 +1,6 @@
 from node import node
 import networkx as nx
+#import matplotlib.pyplot as plt
 
 class map:
     def __init__(self, node_list):
@@ -33,7 +34,7 @@ class map:
                     self.metros.add_edge(int(list[0]), int(i))
 
             line = f.readline()
-
+        #taxis = nx.petersen_graph()
         f.close()
 
     def return_map(self):
@@ -52,27 +53,25 @@ class map:
         dist[node1.number] = 0
         queue.append(node1)
 
-
         while(len(queue) != 0):
             u = queue[0]
             queue.pop(0)
             for i in u.taxi:
                 j = self.node_list[int(i)].number
                 if visited[j] == False:
-                    visited[j] == True
-                    dist[j] == dist[u.number] + 1
-                    pred[j] == u
+                    visited[j] = True
+                    dist[j] = dist[u.number] + 1
+                    pred[j] = u.number
                     queue.append(self.node_list[int(i)])
-                    
 
-                    if j == node2:
+                    if j == node2.number:
                         path = [node2]
-                        crawl = node2;
-                        path.append(crawl);
+                        crawl = node2
         
-                        while (pred[crawl] != -1):
-                            path.append(pred[crawl]);
-                            crawl = pred[crawl];
-                        return path
+                        while (pred[crawl.number] != -1):
+                            print(crawl.number)
+                            path.append(pred[crawl.number]);
+                            crawl = self.node_list[pred[crawl.number]];
+                        return len(path)
 
     
