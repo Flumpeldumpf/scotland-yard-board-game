@@ -63,9 +63,10 @@ class map:
                     dist[j] == dist[u.number] + 1
                     pred[j] == u
                     queue.append(self.node_list[int(i)])
-
+                    
 
                     if j == node2:
+                        print(j)
                         path = [node2]
                         crawl = node2;
                         path.append(crawl);
