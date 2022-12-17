@@ -41,15 +41,39 @@ class map:
         for i in range(len(self.node_list)):
             print(self.node_list[i].returnsmth())
 
-    def find_shortest_route(self, node1, node2):
-        temp_node_list = [node1]
-        final_node_list = []
-        links_needed = 0
-        while node2 not in temp_node_list:
-            links_needed += 1
-            for node in temp_node_list:
-                for neighbor in node.taxi:
+    def find_shortest_route(self, node1:node, node2:node):
 
-                    if node.taxi not in temp_node_list:
-                        temp_node_list.append(node.taxi)
-        return links_needed
+        queue = []
+        cost = 200
+        pred=[-1 for i in range(200)]
+        dist=[200 for i in range(200)]
+        visited = [False for i in range(200)]
+
+        visited[node1.number] = True
+        dist[node1.number] = 0
+        queue.append(node1)
+
+
+        while(len(queue) != 0):
+            u = queue[0]
+            queue.pop(0)
+            for i in u.taxi:
+                j = self.node_list[int(i)].number
+                if visited[j] == False:
+                    visited[j] == True
+                    dist[j] == dist[u.number] + 1
+                    pred[j] == u
+                    queue.append(self.node_list[int(i)])
+
+
+                    if j == node2:
+                        path = [node2]
+                        crawl = node2;
+                        path.append(crawl);
+        
+                        while (pred[crawl] != -1):
+                            path.append(pred[crawl]);
+                            crawl = pred[crawl];
+                        return path
+
+    
