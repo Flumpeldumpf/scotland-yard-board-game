@@ -40,17 +40,17 @@ class map:
         for i in range(len(self.node_list)):
             print(self.node_list[i].returnsmth())
 
-    def find_shortest_route(self, node1, node2):
-        temp_node_list = [node1]
-        final_node_list = []
-        links_needed = 0
-        while node2 not in temp_node_list:
-            links_needed += 1
-            for node in temp_node_list:
-                for neighbor in node.taxi:
+    # def find_shortest_route(self, node1:node, node2:node):
+    #     temp_node_list = [self.node_list[node.number]]
+    #     final_node_list = []
+    #     links_needed = 0
+    #     while node2 not in temp_node_list:
+    #         links_needed += 1
+    #         for node in temp_node_list:
+    #             for neighbor in node.taxi:
 
-                    if node.taxi not in temp_node_list:
-                        temp_node_list.append(node.taxi)
-        return links_needed
+    #                 if neighbor not in temp_node_list:
+    #                     temp_node_list.append(node.taxi)
+    #     return links_needed
 
     
