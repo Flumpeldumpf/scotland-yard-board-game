@@ -33,5 +33,6 @@ class map:
 
                     if node.taxi not in temp_node_list:
                         temp_node_list.append(node.taxi)
+        return links_needed
 
     
