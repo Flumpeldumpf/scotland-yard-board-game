@@ -1,5 +1,5 @@
 class node:
-    def __init__(self, number:int, taxi, bus, metro):
+    def __init__(self, number, taxi, bus, metro):
         self.number = int(number)
         self.taxi = taxi.split(",")
         self.bus = bus.split(",")
