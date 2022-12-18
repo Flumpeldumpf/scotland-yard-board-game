@@ -3,18 +3,19 @@
 from map import map
 from player import player
 from setup import setup
-from setup import setup
 
 taxi = 2
 bus = 3
 metro = 5
 
 def main():
+    
     map1 = map([])
     map.makemap(map1)
     # map.return_map(map1)
 
     st = setup()
+    st.start_of_game()
     posList = st.generate_start_positions() 
     player_list = []
     red = player("red", map1.node_list[posList[0]], [10, 8, 4, 0, 0])
