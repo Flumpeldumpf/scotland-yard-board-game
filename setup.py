@@ -4,6 +4,12 @@ from map import map
 class setup:
     def __init__(self):
         pass
+    
+    def start_of_game(self):
+        print("-----SCOTLAND YARD-----")
+        print("-----hunting mr. x-----")
+        print("                       ")
+        input("Press Enter To Continue...")
 
     def take_turn(self, player, map):
         d = player
