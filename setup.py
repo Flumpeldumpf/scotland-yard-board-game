@@ -1,18 +1,26 @@
 import random
+from map import map
 
 class setup:
     def __init__(self):
         pass
-    
-    def take_turn(self, detective, map):
-        d = detective
-        n = detective.pos
+
+    def take_turn(self, player, map):
+        d = player
+        n = player.pos
         m = map
-        #print out resources and possible moves
+        player.print_resources()
+        self.get_input_move(d,n,m)
+
+    def get_input_move(self, player, node, map):
+        d = player
+        n = node
+        m = map
         print("Input the point you would like to move to.")
         target = input()
         # need to check to see if input is valid (and add loops for people to enter new input)
         multiple = n.check_connectivity(map.node_list[int(target)-1])
+        print(multiple)
         if multiple >= 6:
             print("Input your method of transportation.")
             transport = 1
@@ -29,13 +37,8 @@ class setup:
                 print("This method of transportation is not possible.")
         else:
             transport = multiple
-        if transport == 2:
-            transport = 0
-        elif transport == 3:
-            transport = 1
-        elif transport == 5:
-            transport = 2
-        d.move(int(target), transport)
+        print(d.move(m.node_list[int(target)-1], transport))
+        print("Player is now at", player.pos.number)
 
     def generate_start_positions(self):
         possible_sp = [13, 26, 29, 34, 50, 53, 91, 94,

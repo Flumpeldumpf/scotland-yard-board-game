@@ -12,11 +12,11 @@ class node:
         return self.number
     def check_connectivity(self, node):
         retval = 1;
-        if self.taxi.count(node.number) > 0:
+        if self.taxi.count(str(node.number)) > 0:
             retval *= 2
-        if self.bus.count(node.number) > 0:
+        if self.bus.count(str(node.number)) > 0:
             retval *= 3
-        if self.metro.count(node.number) > 0:
+        if self.metro.count(str(node.number)) > 0:
             retval *= 5
         return retval
 

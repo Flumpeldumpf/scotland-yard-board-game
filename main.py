@@ -2,7 +2,8 @@
 #How many players are there?
 #
 from map import map
-from detective import detective
+from player import player
+from setup import setup
 from setup import setup
 
 taxi = 2
@@ -16,16 +17,27 @@ def main():
 
     st = setup()
     posList = st.generate_start_positions() 
-    red = detective("red", map1.node_list[posList[0]], [10, 8, 4])
+    player_list = []
+    red = player("red", map1.node_list[posList[0]], [10, 8, 4, 0, 0])
     map1.node_list[posList[0]].occupied = 1
-    yellow = detective("yellow", map1.node_list[posList[1]], [10, 8, 4])
+    player_list.append(red)
+    yellow = player("yellow", map1.node_list[posList[1]], [10, 8, 4, 0, 0])
     map1.node_list[posList[1]].occupied = 1
-    green = detective("green", map1.node_list[posList[2]], [10, 8, 4])
+    player_list.append(yellow)
+    green = player("green", map1.node_list[posList[2]], [10, 8, 4, 0, 0])
     map1.node_list[posList[2]].occupied = 1
-    blue = detective("blue", map1.node_list[posList[3]], [10, 8, 4])
+    player_list.append(green)
+    blue = player("blue", map1.node_list[posList[3]], [10, 8, 4, 0, 0])
     map1.node_list[posList[3]].occupied = 1
-
+    player_list.append(blue)
+    misterx = player("black", map1.node_list[posList[4]], [4, 3, 3, 2, 4]) #TODO: change 4 to num of players
+    map1.node_list[posList[4]].occupied = 1
+    #player_list.append(misterx)
     
+    turncount = 0
+    while(turncount < 8):
+        st.take_turn(player_list[turncount % 4],map1) #TODO: eventually turncount will need to be %
+        turncount = turncount + 1
     # print("red is at", red.pos.number, "where do you want to move?")
     # moveTo = int(input())
     # print(red.move(map1.node_list[moveTo-1], taxi))
