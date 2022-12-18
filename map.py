@@ -45,33 +45,40 @@ class map:
 
         queue = []
         cost = 200
-        pred=[-1 for i in range(200)]
-        dist=[200 for i in range(200)]
-        visited = [False for i in range(200)]
+        pred=[-1 for i in range(199)]
+        dist=[200 for i in range(199)]
+        visited = [False for i in range(199)]
 
-        visited[node1.number] = True
-        dist[node1.number] = 0
+        visited[node1.number -1] = True
+        dist[node1.number -1] = 0
         queue.append(node1)
 
         while(len(queue) != 0):
             u = queue[0]
             queue.pop(0)
+            #print(u.taxi)
             for i in u.taxi:
-                j = self.node_list[int(i)].number
-                if visited[j] == False:
-                    visited[j] = True
-                    dist[j] = dist[u.number] + 1
-                    pred[j] = u.number
-                    queue.append(self.node_list[int(i)])
+                #print(self.node_list[int(i) -1].number)
+                j = self.node_list[int(i) -1].number
+                if visited[j-1] == False:
+                    visited[j-1] = True
+                    dist[j-1] = dist[u.number -1] +1
+                    #print(u.number)
+                    pred[j-1] = u.number
+                    queue.append(self.node_list[int(i) -1])
+
 
                     if j == node2.number:
-                        path = [node2]
-                        crawl = node2
-        
-                        while (pred[crawl.number] != -1):
-                            print(crawl.number)
-                            path.append(pred[crawl.number]);
-                            crawl = self.node_list[pred[crawl.number]];
-                        return len(path)
-
-    
+                        #print(pred)
+                        #print(visited)
+                        #print(dist)
+                        path = [node2.number]
+                        crawl = pred[node2.number -1]
+                        
+                        while (crawl != -1):
+                            
+                            path.append(crawl)
+                            crawl = pred[self.node_list[crawl-1].number -1]
+                            #print(crawl)
+                            #print(pred[crawl.number -1])
+                        return path

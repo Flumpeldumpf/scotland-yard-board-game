@@ -29,10 +29,10 @@ def main():
     # print("red is at", red.pos.number, "where do you want to move?")
     # moveTo = int(input())
     # print(red.move(map1.node_list[moveTo-1], taxi))
-    print(map1.find_shortest_route(map1.node_list[0], map1.node_list[19]))
+    print(map1.find_shortest_route(map1.node_list[0], map1.node_list[198]))
 #while (dectectives still have moves or mr.x is found)
 #
-#   facilitate mr. x's move(s)
+#   facilitate mr. x's move(s) 
 #   
 #   make the player's moves:
 #       make player 1's move
