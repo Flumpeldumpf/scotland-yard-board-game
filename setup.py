@@ -16,6 +16,9 @@ class setup:
         d = player
         n = node
         m = map
+        # are there any possible moves??????
+        valid = False
+        while not valid:
         print("Input the point you would like to move to.")
         target = input()
         # need to check to see if input is valid (and add loops for people to enter new input)
@@ -32,7 +35,7 @@ class setup:
             elif trans_input == "underground":
                 transport = 5
             else:
-                print("This type of transportation does not exist")
+                print("This type of transportation does not exist. Please enter taxi, bus, or underground.")
             if multiple % transport != 0:
                 print("This method of transportation is not possible.")
         else:
