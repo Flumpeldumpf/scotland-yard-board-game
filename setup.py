@@ -67,7 +67,7 @@ class setup:
                 else:
                     print("This is not a valid point number.")
                     continue
-            d.move(m.node_list[int(target)-1], transport)
+            d.move(m.node_list[int(target)-1], index)
             print("Player is now at", player.pos.number)
 
     def generate_start_positions(self):
