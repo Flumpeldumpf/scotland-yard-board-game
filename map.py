@@ -1,6 +1,7 @@
 from node import node
 import networkx as nx
 import matplotlib.pyplot as plt
+from detective import detective
 
 class map:
     def __init__(self, node_list):
@@ -36,6 +37,12 @@ class map:
             line = f.readline()
         nx.draw(self.taxis, with_labels=1)
         plt.show()
+    
+    def print_detective_locations(self, detectives):
+        for player in detectives:
+            print(player.pos, ", ")
+        print("\n")
+
 
     def return_map(self):
         for i in range(len(self.node_list)):

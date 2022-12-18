@@ -5,7 +5,7 @@ class detective:
         self.pos = pos
         self.resources = resources
     
-    def returnResources(self):
+    def print_resources(self):
         print(self.resources[0], self.resources[1], self.resources[2])
 
     def move(self, pos, transport):
