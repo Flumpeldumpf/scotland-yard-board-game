@@ -6,8 +6,8 @@ class player:
         self.resources = resources
     
     def print_resources(self):
-        print("Here is player", self.color, "at point", self.pos.number, ".")
-        print(self.resources[0], self.resources[1], self.resources[2])
+        print("The", self.color, "player is at point", str(self.pos.number) + ".")
+        print("They have", self.resources[0], "taxi tickets,", self.resources[1], "bus tickets and", self.resources[2], "underground tickets.")
 
     def move(self, pos, transport):
         index = 0
