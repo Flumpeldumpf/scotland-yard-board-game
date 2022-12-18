@@ -10,7 +10,7 @@ class player:
         print(self.resources[0], self.resources[1], self.resources[2])
 
     def move(self, pos, transport):
-        self.resources[index] = self.resources[index] - 1
+        self.resources[transport] = self.resources[transport] - 1
         self.pos.occupied = 0;
         self.pos = pos
         self.pos.occupied = 1;

@@ -35,7 +35,7 @@ def main():
     #player_list.append(misterx)
     
     turncount = 0
-    while(turncount < 8):
+    while(turncount < 100):
         st.take_turn(player_list[turncount % 4],map1) #TODO: eventually turncount will need to be %
         turncount = turncount + 1
     # print("red is at", red.pos.number, "where do you want to move?")
