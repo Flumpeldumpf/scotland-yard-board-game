@@ -30,13 +30,9 @@ def main():
     # moveTo = int(input())
     # print(red.move(map1.node_list[moveTo-1], taxi))
     print(map1.find_shortest_route(map1.node_list[183], map1.node_list[67]))
-#while (dectectives still have moves or mr.x is found)
 #
-#   facilitate mr. x's move(s) 
+#
 #   
-#   make the player's moves:
-#       make player 1's move
-#       make player 2's move etc.
 #
 if __name__ == "__main__":
     main()
