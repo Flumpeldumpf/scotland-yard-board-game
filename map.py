@@ -34,7 +34,7 @@ class map:
                     self.metros.add_edge(int(list[0]), int(i))
 
             line = f.readline()
-        taxis = nx.petersen_graph()
+        nx.draw(taxis)
         f.close()
 
     def return_map(self):
