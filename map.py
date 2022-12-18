@@ -34,8 +34,8 @@ class map:
                     self.metros.add_edge(int(list[0]), int(i))
 
             line = f.readline()
-        nx.draw(self.taxis)
-        f.close()
+        nx.draw(self.taxis, with_labels=1)
+        plt.show()
 
     def return_map(self):
         for i in range(len(self.node_list)):
