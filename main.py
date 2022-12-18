@@ -1,6 +1,5 @@
-#configs
-#How many players are there?
-#
+# configs
+
 from map import map
 from player import player
 from setup import setup
@@ -13,7 +12,7 @@ metro = 5
 def main():
     map1 = map([])
     map.makemap(map1)
-    #map.return_map(map1)
+    # map.return_map(map1)
 
     st = setup()
     posList = st.generate_start_positions() 
