@@ -12,7 +12,7 @@ class setup:
         print("Input the point you would like to move to.")
         target = input()
         # need to check to see if input is valid (and add loops for people to enter new input)
-        multiple = node.check_connectivity(map.node_list[int(target)-1], n)
+        multiple = n.check_connectivity(map.node_list[int(target)-1])
         if multiple >= 6:
             print("Input your method of transportation.")
             transport = 1
@@ -36,7 +36,7 @@ class setup:
         elif transport == 5:
             transport = 2
         d.move(int(target), transport)
-        
+
     def generate_start_positions(self):
         possible_sp = [13, 26, 29, 34, 50, 53, 91, 94,
          103, 112, 117, 132, 138, 141, 155, 174, 197, 198]
