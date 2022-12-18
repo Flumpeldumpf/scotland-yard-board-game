@@ -1,6 +1,6 @@
 from node import node
 import networkx as nx
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 class map:
     def __init__(self, node_list):
@@ -34,7 +34,7 @@ class map:
                     self.metros.add_edge(int(list[0]), int(i))
 
             line = f.readline()
-        #taxis = nx.petersen_graph()
+        taxis = nx.petersen_graph()
         f.close()
 
     def return_map(self):
