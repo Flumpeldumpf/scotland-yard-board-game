@@ -1,7 +1,7 @@
 # configs
-
+import math
 from map import map
-from player import player
+from player import player, mrx
 from setup import setup
 
 taxi = 2
@@ -18,26 +18,38 @@ def main():
     st.start_of_game()
     posList = st.generate_start_positions() 
     player_list = []
-    red = player("red", map1.node_list[posList[0]], [10, 8, 4, 0, 0])
+
+    misterx = mrx("black", map1.node_list[posList[4]], [4, 3, 3, 4, 2]) #TODO: change 4 to num of players
+    map1.node_list[posList[4]].occupied = 1
+    player_list.append(misterx)
+
+    red = player("red", map1.node_list[posList[0]], [10, 8, 4])
     map1.node_list[posList[0]].occupied = 1
     player_list.append(red)
-    yellow = player("yellow", map1.node_list[posList[1]], [10, 8, 4, 0, 0])
+    yellow = player("yellow", map1.node_list[posList[1]], [10, 8, 4])
     map1.node_list[posList[1]].occupied = 1
     player_list.append(yellow)
-    green = player("green", map1.node_list[posList[2]], [10, 8, 4, 0, 0])
+    green = player("green", map1.node_list[posList[2]], [10, 8, 4])
     map1.node_list[posList[2]].occupied = 1
     player_list.append(green)
-    blue = player("blue", map1.node_list[posList[3]], [10, 8, 4, 0, 0])
+    blue = player("blue", map1.node_list[posList[3]], [10, 8, 4])
     map1.node_list[posList[3]].occupied = 1
     player_list.append(blue)
-    misterx = player("black", map1.node_list[posList[4]], [4, 3, 3, 2, 4]) #TODO: change 4 to num of players
-    map1.node_list[posList[4]].occupied = 1
-    #player_list.append(misterx)
+
+
     
     turncount = 0
-    while(turncount < 100):
-        st.take_turn(player_list[turncount % 4],map1) #TODO: eventually turncount will need to be %
+    while(win is False):
+        win = st.take_turn(player_list[turncount % 5], misterx, map1, math.ceil(turncount / 5)+1) #TODO: eventually turncount will need to be %
         turncount = turncount + 1
+
+        
+        if win == 1:
+            print("Mr. X got away!")
+            win = True
+        if win == 2:
+            print("Player", player_list[turncount % 5].color, "caught Mr. X!")
+            win = True
     # print("red is at", red.pos.number, "where do you want to move?")
     # moveTo = int(input())
     # print(red.move(map1.node_list[moveTo-1], taxi))

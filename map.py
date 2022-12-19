@@ -40,8 +40,8 @@ class map:
     
     def print_player_locations(self, players):
         for player in players:
-            print(player.pos, ", ")
-        print("\n")
+            print("The", player.color, "player is at point", str(player.pos.number)+".")
+        print("Mr. X is at point ????.")
 
 
     def return_map(self):
