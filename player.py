@@ -1,34 +1,49 @@
-from node import nodeplayer_list
+from node import node
+
 class player:
     def __init__(self, color, pos, resources):
         self.color = color
         self.pos = pos
         self.resources = resources
     
-    def print_resources(self):
+    def print_resources(self, round, double):
         print("The", self.color, "player is at point", str(self.pos.number) + ".")
-        print("They have", self.resources[0], "taxi tickets,", self.resources[1], "bus tickets and", self.resources[2], "underground tickets.")
+        print("They have", self.resources[0], "taxi ticket(s),", self.resources[1], "bus ticket(s) and", self.resources[2], "underground ticket(s).")
 
-    def move(self, misterx, pos, transport):
+    def move(self, pos, misterx, transport, trstr):
         self.resources[transport] = self.resources[transport] - 1
         misterx.resources[transport] = misterx.resources[transport] + 1
-        self.pos.occupied = 0;
+        print("(Mr.X recieves 1", trstr + ".)")
+        self.pos.occupied = False
         self.pos = pos
-        self.pos.occupied = 1;
-
+        self.pos.occupied = True
+        print("The", self.color, "player is now at", str(self.pos.number)+".\n")
+#Mr. X player subclass
 class mrx(player):
-    
-    def print_resources(self, round):
-        print("Round:", round)
-        if(round not in [3, 8, 13, 18, 24]):
-            print("Mr. X is hidden")
-        else:
-            print("Mr. X is at point", str(player.pos.number) + ".")
-        print("They have", player.resources[0], "taxi tickets,", splayerresources[1], "bus tickets", player.resources[2], "underground tickets,",
-        player.resources[3], "Mr. X tickets and", player.resources[4], "double move tickets.")
 
-    def move(self, pos, transport):
-        player.resources[transport] = player.resources[transport] - 1
-        player.pos.occupied = 0
-        player.pos = pos
-        player.pos.occupied = 2
+    def __init__(self, color, pos, resources):
+        self.color = color
+        self.pos = pos
+        self.resources = resources
+    
+    def print_resources(self, round, double):
+        print("Round:", round + double)
+        if(double == 1):
+            self.resources[4] = 1
+        if(double == 2):
+            self.resources[4] = 0       
+        if(round not in [3, 8, 13, 18, 24]):
+            print("Mr. X is hidden. ---", str(self.pos.number) + " ---")
+        else:
+            print("Mr. X is at point", str(self.pos.number) + ".")
+        print("They have", self.resources[0], "taxi ticket(s),", self.resources[1], "bus ticket(s)", self.resources[2], "underground ticket(s),", self.resources[3], "Mr. X ticket(s) and", self.resources[4], "double move ticket(s).")
+
+    def move(self, pos, misterx, transport, trstr):
+        if(transport == 3):
+            print("Mr. X used a Mr. X ticket!")
+        else:
+            print("Mr. X used a", trstr, "ticket.")
+        self.resources[transport] = self.resources[transport] - 1
+        self.pos.occupied = False
+        self.pos = pos
+        self.pos.occupied = True
