@@ -21,8 +21,8 @@ class map:
         while line:
 
             list = line.split(" ")
-            list[3] = list[3].split("\n")[0]
-            n = node(list[0], list[1], list[2], list[3])
+            list[4] = list[3].split("\n")[0]
+            n = node(list[0], list[1], list[2], list[3], list[4])
             self.node_list.append(n)
             for i in list[1].split(","):
                 if (i != 0):
@@ -31,6 +31,9 @@ class map:
                 if (i != 0):
                     self.buses.add_edge(int(list[0]), int(i))
             for i in list[3].split(","):
+                if (i != 0):
+                    self.metros.add_edge(int(list[0]), int(i))
+            for i in list[4].split(","):
                 if (i != 0):
                     self.metros.add_edge(int(list[0]), int(i))
 

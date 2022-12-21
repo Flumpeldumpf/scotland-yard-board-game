@@ -1,9 +1,10 @@
 class node:
-    def __init__(self, number, taxi, bus, metro):
+    def __init__(self, number, taxi, bus, metro, water):
         self.number = int(number)
         self.taxi = taxi.split(",")
         self.bus = bus.split(",")
         self.metro = metro.split(",")
+        self.water = water.split(",")
         self.occupied = 0
 
     # def __str__(self):
@@ -19,5 +20,7 @@ class node:
             retval *= 3
         if self.metro.count(str(node.number)) > 0:
             retval *= 5
+        if self.water.count(str(node.number)) > 0:
+            retval *= 7
         return retval
 
