@@ -64,6 +64,7 @@ class setup:
 
                             #Checks if point is occupied
                             #print(map.node_list[target - 1].occupied)
+                            print("target-1 is", target-1)
                             if map.node_list[target-1].occupied == False:
                                 
 
@@ -88,6 +89,10 @@ class setup:
                                             transport = 5
                                             validtwo = True
                                             index = 2
+                                        elif trans_input == "water":
+                                            transport = 7
+                                            validtwo = True
+                                            index = 3
                                         else:
                                             print("This type of transportation does not exist. Please enter taxi, bus, or underground.")
                                             continue
@@ -101,9 +106,12 @@ class setup:
                                         elif multiple == 3:
                                             index = 1
                                             trans_input = "bus"
-                                        else:
+                                        elif multiple == 5:
                                             index = 2
                                             trans_input = "underground"
+                                        else :
+                                            index = 3
+                                            trans_input = "water"
                                         validtwo = 1
                                 
                                         

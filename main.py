@@ -24,16 +24,16 @@ def main():
     player_list.append(misterx)
 
     red = player("red", map1.node_list[posList[1] -1], [10, 8, 4])
-    map1.node_list[posList[0]].occupied = 1
+    map1.node_list[posList[0]-1].occupied = 1
     player_list.append(red)
     yellow = player("yellow", map1.node_list[posList[2] -1], [10, 8, 4])
-    map1.node_list[posList[1]].occupied = 1
+    map1.node_list[posList[1]-1].occupied = 1
     player_list.append(yellow)
     green = player("green", map1.node_list[posList[3] -1], [10, 8, 4])
-    map1.node_list[posList[2]].occupied = 1
+    map1.node_list[posList[2]-1].occupied = 1
     player_list.append(green)
     blue = player("blue", map1.node_list[posList[4] -1], [10, 8, 4])
-    map1.node_list[posList[3]].occupied = 1
+    map1.node_list[posList[3]-1].occupied = 1
     player_list.append(blue)
 
     map1.print_player_locations([red, yellow, green, blue])
