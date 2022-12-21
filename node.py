@@ -10,6 +10,7 @@ class node:
     #     print(str(self.number))
     def returnsmth(self):
         return self.number
+
     def check_connectivity(self, node):
         retval = 1;
         if self.taxi.count(str(node.number)) > 0:
