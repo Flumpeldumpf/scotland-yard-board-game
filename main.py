@@ -43,7 +43,7 @@ def main():
 
     while(win == 0):
         win = st.take_turn(player_list[turncount % 5], misterx, map1, math.ceil(turncount / 5)+1) #TODO: eventually turncount will need to be %
-        turncount = turncount + 1
+        #turncount = turncount + 1
 
         #print(win)
         if win == 1:

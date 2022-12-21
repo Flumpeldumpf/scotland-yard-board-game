@@ -64,7 +64,6 @@ class setup:
 
                             #Checks if point is occupied
                             #print(map.node_list[target - 1].occupied)
-                            print("target-1 is", target-1)
                             if map.node_list[target-1].occupied == False:
                                 
 
@@ -72,7 +71,7 @@ class setup:
                                 while not validtwo:        
 
                                     #Resolves if there are multiple ways to travel somewhere
-                                    if multiple >= 6:
+                                    if multiple != 7 and multiple >= 6:
                                         print("Input your method of transportation.")
                                         
                                         trans_input = input()
@@ -95,24 +94,33 @@ class setup:
                                             index = 3
                                         else:
                                             print("This type of transportation does not exist. Please enter taxi, bus, or underground.")
+                                            validtwo = False
                                             continue
                                         if multiple % transport != 0:
                                             print("This method of transportation is not possible.")
+                                            validtwo = False
                                             continue
                                     else:
                                         if multiple == 2:
                                             index = 0
+                                            validtwo = 1
                                             trans_input = "taxi"
                                         elif multiple == 3:
                                             index = 1
+                                            validtwo = 1
                                             trans_input = "bus"
                                         elif multiple == 5:
                                             index = 2
+                                            validtwo = 1
                                             trans_input = "underground"
                                         else :
                                             index = 3
+                                            validtwo = 1
                                             trans_input = "water"
-                                        validtwo = 1
+                                        if multiple % transport != 0:
+                                            print("This method of transportation is not possible.")
+                                            validtwo = False
+                                            continue
                                 
                                         
                                 #Checks if there are resourses for chosen type of transportation
@@ -138,7 +146,7 @@ class setup:
                     print("This is not a valid point number.")
                     continue
 
-            if(d == misterx) and (misterx.resources[3] != 0):
+            if(d == misterx) and (misterx.resources[3] != 0) and trans_input != "water":
                 print("Would you like to use a Mr. X ticket? (yes or no)")
                 ans = input()
                 if(ans == "yes"):
