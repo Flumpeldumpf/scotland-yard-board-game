@@ -21,7 +21,7 @@ class map:
         while line:
 
             list = line.split(" ")
-            list[4] = list[3].split("\n")[0]
+            list[3] = list[3].split("\n")[0]
             n = node(list[0], list[1], list[2], list[3], list[4])
             self.node_list.append(n)
             for i in list[1].split(","):
