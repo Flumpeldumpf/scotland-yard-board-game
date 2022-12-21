@@ -1,5 +1,6 @@
 from node import node
 
+
 class player:
     def __init__(self, color, pos, resources):
         self.color = color
@@ -18,6 +19,7 @@ class player:
         self.pos = pos
         self.pos.occupied = True
         print("The", self.color, "player is now at", str(self.pos.number)+".\n")
+
 #Mr. X player subclass
 class mrx(player):
 
