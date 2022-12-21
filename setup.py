@@ -63,6 +63,7 @@ class setup:
 
                             #Checks if point is occupied
                             #print(map.node_list[target - 1].occupied)
+                            print("target-1 is", target-1)
                             if map.node_list[target-1].occupied == False:
                                 
 
