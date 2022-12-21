@@ -1,5 +1,6 @@
 from node import node
 
+
 class player:
     def __init__(self, color, pos, resources):
         self.color = color
@@ -18,6 +19,7 @@ class player:
         self.pos = pos
         self.pos.occupied = True
         print("The", self.color, "player is now at", str(self.pos.number)+".\n")
+
 #Mr. X player subclass
 class mrx(player):
 
@@ -32,7 +34,7 @@ class mrx(player):
             self.resources[4] = 1
         if(double == 2):
             self.resources[4] = 0       
-        if(round not in [3, 8, 13, 18, 24]):
+        if((round + double) not in [3, 8, 13, 18, 24]):
             print("Mr. X is hidden. ---", str(self.pos.number) + " ---")
         else:
             print("Mr. X is at point", str(self.pos.number) + ".")

@@ -1,3 +1,5 @@
+#Defines one of the 199 places on the map.
+#number 
 class node:
     def __init__(self, number, taxi, bus, metro, water):
         self.number = int(number)

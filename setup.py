@@ -11,7 +11,8 @@ class setup:
         print("                       ")
         input("Press Enter To Continue...")
 
-
+    #Handles turns for all players and Mr. X
+    #player => the player object that is moving
     def take_turn(self, player, misterx, map, round):
         d = player
         n = player.pos
