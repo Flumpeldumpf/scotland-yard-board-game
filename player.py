@@ -32,7 +32,7 @@ class mrx(player):
             self.resources[4] = 1
         if(double == 2):
             self.resources[4] = 0       
-        if(round not in [3, 8, 13, 18, 24]):
+        if((round + double) not in [3, 8, 13, 18, 24]):
             print("Mr. X is hidden. ---", str(self.pos.number) + " ---")
         else:
             print("Mr. X is at point", str(self.pos.number) + ".")
