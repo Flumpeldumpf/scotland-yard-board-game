@@ -1,43 +1,43 @@
 from node import node
-import networkx as nx
-import matplotlib.pyplot as plt
+# import networkx as nx
+# import matplotlib.pyplot as plt
 from player import player
 
 class map:
     def __init__(self, node_list):
         self.node_list = node_list
-        self.taxis = nx.Graph()
-        self.buses = nx.Graph()
-        self.metros = nx.Graph()
+        # self.taxis = nx.Graph()
+        # self.buses = nx.Graph()
+        # self.metros = nx.Graph()
 
-    def makemap(self):
-        self.taxis.add_nodes_from(range(1,200))
-        self.buses.add_nodes_from(range(1,200))
-        self.metros.add_nodes_from(range(1,200))
+    # def makemap(self):
+    #     self.taxis.add_nodes_from(range(1,200))
+    #     self.buses.add_nodes_from(range(1,200))
+    #     self.metros.add_nodes_from(range(1,200))
 
-        f = open("scotland_yard.txt", "r")
+    #     f = open("scotland_yard.txt", "r")
         
-        line = f.readline()
-        while line:
+    #     line = f.readline()
+    #     while line:
 
-            list = line.split(" ")
-            list[4] = list[4].split("\n")[0]
-            n = node(list[0], list[1], list[2], list[3], list[4])
-            self.node_list.append(n)
-            for i in list[1].split(","):
-                if (i != 0):
-                    self.taxis.add_edge(int(list[0]), int(i))
-            for i in list[2].split(","):
-                if (i != 0):
-                    self.buses.add_edge(int(list[0]), int(i))
-            for i in list[3].split(","):
-                if (i != 0):
-                    self.metros.add_edge(int(list[0]), int(i))
-            for i in list[4].split(","):
-                if (i != 0):
-                    self.metros.add_edge(int(list[0]), int(i))
+    #         list = line.split(" ")
+    #         list[4] = list[4].split("\n")[0]
+    #         n = node(list[0], list[1], list[2], list[3], list[4])
+    #         self.node_list.append(n)
+    #         for i in list[1].split(","):
+    #             if (i != 0):
+    #                 self.taxis.add_edge(int(list[0]), int(i))
+    #         for i in list[2].split(","):
+    #             if (i != 0):
+    #                 self.buses.add_edge(int(list[0]), int(i))
+    #         for i in list[3].split(","):
+    #             if (i != 0):
+    #                 self.metros.add_edge(int(list[0]), int(i))
+    #         for i in list[4].split(","):
+    #             if (i != 0):
+    #                 self.metros.add_edge(int(list[0]), int(i))
 
-            line = f.readline()
+    #         line = f.readline()
         #nx.draw(self.taxis, with_labels=1)
         #plt.show()
     
