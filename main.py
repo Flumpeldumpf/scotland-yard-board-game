@@ -12,8 +12,8 @@ metro = 5
 def main():
     
     map1 = map([])
-    #map.makemap(map1)
-    # map.return_map(map1)
+    map.makemap(map1)
+    map.return_map(map1)
 
     st = setup(0)
     st.start_of_game()

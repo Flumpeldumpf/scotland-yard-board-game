@@ -10,42 +10,41 @@ class map:
         # self.buses = nx.Graph()
         # self.metros = nx.Graph()
 
-    # def makemap(self):
-    #     self.taxis.add_nodes_from(range(1,200))
-    #     self.buses.add_nodes_from(range(1,200))
-    #     self.metros.add_nodes_from(range(1,200))
+    def makemap(self):
+        # self.taxis.add_nodes_from(range(1,200))
+        # self.buses.add_nodes_from(range(1,200))
+        # self.metros.add_nodes_from(range(1,200))
 
-    #     f = open("scotland_yard.txt", "r")
+        f = open("scotland_yard.txt", "r")
         
-    #     line = f.readline()
-    #     while line:
+        line = f.readline()
+        while line:
 
-    #         list = line.split(" ")
-    #         list[4] = list[4].split("\n")[0]
-    #         n = node(list[0], list[1], list[2], list[3], list[4])
-    #         self.node_list.append(n)
-    #         for i in list[1].split(","):
-    #             if (i != 0):
-    #                 self.taxis.add_edge(int(list[0]), int(i))
-    #         for i in list[2].split(","):
-    #             if (i != 0):
-    #                 self.buses.add_edge(int(list[0]), int(i))
-    #         for i in list[3].split(","):
-    #             if (i != 0):
-    #                 self.metros.add_edge(int(list[0]), int(i))
-    #         for i in list[4].split(","):
-    #             if (i != 0):
-    #                 self.metros.add_edge(int(list[0]), int(i))
+            list = line.split(" ")
+            list[4] = list[4].split("\n")[0]
+            n = node(list[0], list[1], list[2], list[3], list[4])
+            self.node_list.append(n)
+            # for i in list[1].split(","):
+            #     if (i != 0):
+            #         self.taxis.add_edge(int(list[0]), int(i))
+            # for i in list[2].split(","):
+            #     if (i != 0):
+            #         self.buses.add_edge(int(list[0]), int(i))
+            # for i in list[3].split(","):
+            #     if (i != 0):
+            #         self.metros.add_edge(int(list[0]), int(i))
+            # for i in list[4].split(","):
+            #     if (i != 0):
+            #         self.metros.add_edge(int(list[0]), int(i))
 
-    #         line = f.readline()
-        #nx.draw(self.taxis, with_labels=1)
-        #plt.show()
+            line = f.readline()
+        # nx.draw(self.taxis, with_labels=1)
+        # plt.show()
     
     def print_player_locations(self, players):
         for player in players:
             print("The", player.color, "player is at point", str(player.pos.number)+".")
         print("Mr. X is at point ????.")
-
 
     def return_map(self):
         for i in range(len(self.node_list)):
