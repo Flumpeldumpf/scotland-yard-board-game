@@ -32,7 +32,7 @@ class setup:
                     if(round + self.doubleuses == 25):
                         return 1
                     player.print_resources(round, self.doubleuses)
-                    self.get_input_move(misterx, d,n,m)
+                    self.get_input_move(misterx, d,d.pos,m)
         return 0          
 
 
@@ -117,10 +117,10 @@ class setup:
                                             index = 3
                                             validtwo = 1
                                             trans_input = "water"
-                                        if multiple % transport != 0:
-                                            print("This method of transportation is not possible.")
-                                            validtwo = False
-                                            continue
+                                        # if multiple % transport != 0:
+                                        #     print("This method of transportation is not possible.")
+                                        #     validtwo = False
+                                        #     continue
                                 
                                         
                                 #Checks if there are resourses for chosen type of transportation

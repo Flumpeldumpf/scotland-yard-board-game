@@ -8,7 +8,7 @@ from setup import setup
 taxi = 2
 bus = 3
 metro = 5
-
+#todo: set up internal count for rounds on the board and count for rounds to display (difference comes from mister x turns - doesnt count as separate "round" in gameplay)
 def main():
     
     map1 = map([])
